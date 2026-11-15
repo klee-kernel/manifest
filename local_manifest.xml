@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-    <remote name="klee-blobs" fetch="https://github.com/xiaomi-klee-devs" />
+    <remote name="klee-kernel" fetch="https://github.com/klee-kernel" />
 
     <remove-project name="kernel/build" />
     <remove-project name="kernel/common" />
 
-    <project path="build/kernel" name="android_build_kernel" remote="klee-blobs" revision="bsp-klee-w-oss">
+    <project path="build/kernel" name="build_kernel" remote="klee-kernel" revision="main">
         <linkfile src="kleaf/bazel.sh" dest="tools/bazel" />
         <linkfile src="build_test.sh" dest="build/build_test.sh" />
         <linkfile src="config.sh" dest="build/config.sh" />
@@ -14,16 +14,16 @@
         <linkfile src="static_analysis" dest="build/static_analysis" />
     </project>
 
-    <project remote="klee-blobs" name="kernel-build-bazel_mgk_rules" path="build/bazel_mgk_rules" revision="bsp-klee-w-oss">
+    <project remote="klee-kernel" name="kernel-build-bazel_mgk_rules" path="build/bazel_mgk_rules" revision="main">
         <linkfile src="BUILD.bazel" dest="BUILD" />
         <linkfile src="kleaf/bazel.WORKSPACE" dest="WORKSPACE" />
     </project>
 
-    <project remote="klee-blobs" name="android_kernel-6.6" path="kernel-6.6" revision="bsp-klee-w-oss">
+    <project remote="klee-kernel" name="kernel-6.6" path="kernel-6.6" revision="main">
         <linkfile src="build.config.constants" dest="build.config.constants" />
     </project>
-    <project remote="klee-blobs" name="android_kernel_device_modules-6.6" path="kernel_device_modules-6.6" revision="bsp-klee-w-oss">
+    <project remote="klee-kernel" name="kernel_device_modules-6.6" path="kernel_device_modules-6.6" revision="main">
         <linkfile src="build.config.mtk_kernel_device_modules" dest="build.config" />
     </project>
-    <project remote="klee-blobs" name="android_vendor_mediatek_kernel_modules" path="vendor/mediatek/kernel_modules" revision="bsp-klee-w-oss"/>
+    <project remote="klee-kernel" name="vendor_mediatek_kernel_modules" path="vendor/mediatek/kernel_modules" revision="main"/>
 </manifest>

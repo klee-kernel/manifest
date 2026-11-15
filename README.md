@@ -12,7 +12,7 @@ repo init -u https://android.googlesource.com/kernel/manifest -b common-android1
 ```
 Then use a command like this to clone the local manifest at the root of your local repository:
 ```
-git clone https://github.com/xiaomi-klee-devs/android_manifest .repo/local_manifests -b kernel/lineage-23.2
+git clone https://github.com/klee-kernel/manifest .repo/local_manifests -b main
 ```
 Then to sync up:
 ```
